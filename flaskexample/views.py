@@ -6,8 +6,7 @@ import pandas as pd
 import numpy as np
 import psycopg2
 from flask import request
-import matplotlib as mpl
-import matplotlib.pyplot as plt
+
 
 # from a_Model import ModelIt
 
