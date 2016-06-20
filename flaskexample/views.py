@@ -11,11 +11,12 @@ from flask import request
 # from a_Model import ModelIt
 
 user = 'xb' #add your username here (same as previous postgreSQL)            
-host = '52.38.122.240'
+host = 'localhost'
 dbname = 'meps_mvp_db'
+pswd = '123456'
 db = create_engine('postgres://%s%s/%s'%(user,host,dbname))
 con = None
-con = psycopg2.connect(database = dbname, user = user)
+con = psycopg2.connect(database = dbname, user = user, host =host,  password=pswd)
 #con = mysql.connect(database = dbname, user = user)
 # plot_data
 
