@@ -7,9 +7,6 @@ import numpy as np
 import psycopg2
 from flask import request
 
-
-# from a_Model import ModelIt
-
 user = 'xb' #add your username here (same as previous postgreSQL)            
 host = 'localhost'
 dbname = 'meps_mvp_db'
@@ -17,8 +14,6 @@ pswd = '123456'
 db = create_engine('postgres://%s%s/%s'%(user,host,dbname))
 con = None
 con = psycopg2.connect(database = dbname, user = user, host =host,  password=pswd)
-#con = mysql.connect(database = dbname, user = user)
-# plot_data
 
 @app.route('/')
 @app.route('/index')
@@ -51,6 +46,7 @@ def bio_info():
     return render_template("insight_project.html")
 
 
+#feed the user inputs to the linear model, render the output the html template
 @app.route('/forcast')
 def glm_output():
   blood_pres_input = int(request.args.get('blood_pres_input'))
@@ -65,6 +61,7 @@ def glm_output():
   gender_var = request.args.get('gender_input')
   age_var = request.args.get('age_input')
 
+  #compute the expenditure average from sql table for user's age and sex
   query = "SELECT avg(exp) FROM mvp_data_table WHERE age31x={0} AND sex = {1}".format(age_var,gender_var)
   print (query)
   query_results=pd.read_sql_query(query,con)
@@ -73,6 +70,7 @@ def glm_output():
   age_input = int(age_var)
   gender_input = int(gender_var)
   #break down the race answer so can be fitted into model
+
   ethnicity_input = int(request.args.get('ethnicity_input'))
   ##default setting for white and hispan ethnicity
   white = 0;
@@ -94,17 +92,3 @@ def glm_output():
   output.append(dict(predict= est_y, aver = var))
   the_results =''
   return render_template("insight_project_out.html",  outputs = output, the_result = the_results)
-
-# @app.route('/myplot')
-# def getplot():
-#   fig = plt.figure()
-#   plt.plot(range(3))
-#   canvas = FigureCanvas(fig)
-#   img = BytesIO()
-#   fig.savefig(img)
-#   img.seek(0)
-#   return send_file(img, mimetype='image/png')
-
-
-
-

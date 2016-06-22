@@ -41,7 +41,6 @@
                   <li><a href="/insight_project">Home</a></li>
                   <li><a href="/project_slides">Presentation Slides</a></li>
                   <li><a href="https://www.linkedin.com/in/xbzheng">LinkedIn</a></li>
-                  <li><a href="/bio">About me</a></li>
                </ul>
             </div>
             <!--/.nav-collapse -->
@@ -52,7 +51,7 @@
          <div class="starter-template">
          </div>
          <div class = "container col-md-6">
-            <h1>To better serve you, please answer following questions</h1>
+            <h2>To better serve you, please answer following questions</h2>
             <form  action="/forcast" method="GET">
                <div class="form-group">
                   <p>
@@ -65,9 +64,9 @@
                   <p>
                      What is your age? 
                      <select name='age_input', class="btn btn-primary">
-                        <option value="40">31-40</option>            
+                        <option value="40">31-40</option>
                         <option value="20">11-20</option>
-                        <option value="30">21-30</option>     
+                        <option value="30">21-30</option>
                         <option value="50">41-50</option>
                         <option value="60">51-60</option>
                         <option value="70">61-70</option>
@@ -83,18 +82,16 @@
                         <option value="4">Hispanic</option>
                      </select>
                   </p>
-
                   <p>
                      What is your wage? 
                      <select name='wage_input', class="btn btn-primary">
                         <option value="1"> $100,000 - $ 500,000</option>
                         <option value="0">Not provided</option>
                         <option value="1"> < $50,000</option>
-                        <option value="1"> $50,000 - $ 100,000</option>                    
+                        <option value="1"> $50,000 - $ 100,000</option>
                         <option value="1"> >$500,000 </option>
                      </select>
                   </p>
-
                   <p>
                      Do you have high blood pressure?
                      <select name='blood_pres_input'>
@@ -102,7 +99,6 @@
                         <option value="2">Yes</option>
                      </select>
                   </p>
-
                   <p>
                      Do you need to see a specialist? 
                      <select name='specialist_input'>
@@ -124,7 +120,6 @@
                         <option value="1">Yes</option>
                      </select>
                   </p>
-
                   <p>
                      Have you been diagnosed with Diabetes? 
                      <select name='diabetes_input'>
@@ -132,7 +127,6 @@
                         <option value="2">Yes</option>
                      </select>
                   </p>
-                 
                   <p>
                      Total number of hospital discharges?
                      <select name='discharge_input'>
@@ -143,7 +137,6 @@
                         <option value="4"> >4</option>
                      </select>
                   </p>
-
                   <p>
                      Have you had a routine health problems? 
                      <select name='routine_input'>
@@ -152,7 +145,6 @@
                         <option value="0">Yes</option>
                      </select>
                   </p>
-
                   <p>
                      Are you currently spend half hour or more in moderate to vigorous physical activity at least five times a week? 
                      <select name='act_input'>
@@ -160,56 +152,40 @@
                         <option value="2">Yes</option>
                      </select>
                   </p>
-
                   <button type="submit" class="btn btn-primary"">Submit!</button>
                </div>
             </form>
+            <div class = "container col-md-4">
+               <h4>Example of client's inputs:</h4>
+            </div>
+            <div class = "container col-md-3">
+               <form  action="/good_health_cond">
+                  <button type="submit" class="btn btn-primary"">Example 1</button>
+               </form>
+            </div>
+            <div class = "container col-md-3">
+               <form  action="/bad_health_cond">
+                  <button type="submit" class="btn btn-primary"">Example 2</button>
+               </form>
+            </div>
          </div>
          <div class = "container col-md-6">
-            
             <div class = "container col-md-12">
-            <h1>Sample Health Condition Input</h1>
-              <div class = "container col-md-8">
-                  <form  action="/good_health_cond">
-                     <div class="form-group">
-                           <button type="submit" class="btn btn-primary"">Good</button>
+               <div class="promos">
+                  <div class="promo scale">
+                     <div class="deal">
+                        <span>Predicted Expenditure</span>
                      </div>
-                  </form>
-               </div>
-
-
-               <div class = "container col-md-4">
-                  <form  action="/bad_health_cond">
-                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary"">Bad</button>
+                     <span class="price">$0</span>
+                  </div>
+                  <div class="promo">
+                     <div class="deal">
+                        <span>Average Expenditure at Your Age</span>
                      </div>
-                  </form>
+                     <span class="price">$0</span>
+                  </div>
                </div>
-             </div>
-           
-
-            <div class = "container col-md-12">
-
-              <div class="promos">
-                 <div class="promo scale">
-                    <div class="deal">
-                       <span>Predicted Expenditure</span>
-                    </div>
-                    <span class="price">$0</span>
-                 </div>
-                 <div class="promo">
-                    <div class="deal">
-                       <span>Average Expenditure at Your Age</span>
-                    </div>
-                    <span class="price">$0</span>
-                 </div>
-              </div>
             </div>
-            
-            <!-- <div class = "container col-md-10">
-             <h1>Graph</h1>
-            </div> -->
-
          </div>
       </div>
       <!-- /.container -->
