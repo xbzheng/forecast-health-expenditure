@@ -7,7 +7,7 @@ import numpy as np
 import psycopg2
 from flask import request
 
-user = 'xb' #add your username here (same as previous postgreSQL)            
+user = 'xb'          
 host = 'localhost'
 dbname = 'meps_mvp_db'
 pswd = '123456'
@@ -40,11 +40,6 @@ def insight_input_bad_cond():
 @app.route('/project_slides')
 def project_slides():
     return render_template("slides.html")
-
-@app.route('/bio')
-def bio_info():
-    return render_template("insight_project.html")
-
 
 #feed the user inputs to the linear model, render the output the html template
 @app.route('/forcast')
